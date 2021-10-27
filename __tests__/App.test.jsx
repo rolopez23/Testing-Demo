@@ -5,7 +5,7 @@ import {rest} from 'msw'
 import {setupServer} from 'msw/node'
 
 // import react-testing methods
-import {render, getByText} from '@testing-library/react'
+import {render, getByText, waitFor, screen} from '@testing-library/react'
 
 // add custom jest matchers from jest-dom
 import '@testing-library/jest-dom'
@@ -18,12 +18,12 @@ const route = 'https://jsonplaceholder.typicode.com/todos';
 
 const server = setupServer(
   rest.get(route, (req, res, ctx) =>{
-    return res(ctx.json({
+    return res(ctx.json([{
       "userId": 1,
       "id": 1,
       "title": "delectus aut autem",
       "completed": false
-    }))
+    }]))
   }),
 )
   //Need to mock out route
@@ -32,6 +32,7 @@ afterEach(() => server.resetHandlers())
 afterAll(()=> server.close())
 
 test('loads and displays todos', async ()=> {
-  const {getByText} = render(<App />)
-  expect(await getByText("delectus aut autem")).toBeInTheDocument()
+  const app = render(<App />)
+  await waitFor(() => screen.getByText("delectus aut autem"))
+  expect(app.getByText("delectus aut autem")).toBeInTheDocument()
 })

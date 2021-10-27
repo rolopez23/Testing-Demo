@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "react:dev": "webpack --watch",
+    "react": "webpack --watch",
     "react:prod": "webpack",
-    "start:dev": "nodemon server",
+    "start": "nodemon server",
     "start:prod": "node server"
   },
   "keywords": [],

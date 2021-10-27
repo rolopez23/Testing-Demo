@@ -5,6 +5,7 @@ const TodoList = ({ todos }) => (
     <ul className="list-group">
         {todos.map(todo => (
             <TodoListItem
+                role="todo"
                 todo={todo} 
                 key={todo.id}
             />
