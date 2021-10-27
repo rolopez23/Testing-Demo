@@ -11,8 +11,7 @@ const PORT = 3000;
 app.use(express.static(PUBLIC))
 
 app.get('/hello', (req, res)=>{
-  console.log('request')
-  res.send({greeting: 'hello world'});
+  res.send({greeting: 'hello world!!'});
 })
 
 
