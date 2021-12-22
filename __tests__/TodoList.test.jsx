@@ -9,7 +9,8 @@ Enzyme.configure({ adapter: new Adapter() });
 //Sample mock data
 const zeroTodo = [];
 const oneTodo = [{}];
-const threeTodos = [{}, {},{}];
+const threeTodos = [{},{},{}];
+const thirtyTodos = new Array(30).fill({});
 
 //Step 1: What do we care about with Todo List? 
 // Aka what problem does it solve.
@@ -35,4 +36,9 @@ test('Renders a single todo component', ()=> {
 test('Renders an empty todo component', ()=> {
   const wrapper = mount(<TodoList todos={threeTodos}/>);
   expect(wrapper).toContainMatchingElements(3,'li')
+})
+
+test('Todo list shows at most 20 todos', () => {
+  const wrapper = mount(<TodoList todos={thirtyTodos}/>);
+  expect(wrapper).toContainMatchingElements(20,'li')
 })

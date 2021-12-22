@@ -15,11 +15,11 @@ const server = setupServer(
   }),
 )
 // setup server before each test
-beforeAll(() => server.listen())
+beforeAll(()=>server.listen())
 //after each test reset server
-afterEach(() => server.resetHandlers())
+afterEach(()=>server.resetHandlers())
 //bring the server down
-afterAll(() => server.close())
+afterAll(()=>server.close())
 
 test('loads and displays greeting', async () => {
   //Renders the component
@@ -27,25 +27,25 @@ test('loads and displays greeting', async () => {
   //Tests it with a click event
   fireEvent.click(screen.getByText('Load Greeting'))
   
-  //await waitFor(() => screen.getByRole('heading'))
+  await waitFor(() => screen.getByRole('heading'))
 
   expect(screen.getByRole('heading')).toHaveTextContent('hello there')
   expect(screen.getByRole('button')).toBeDisabled()
 })
 
-test('handles server error', async () => {
-  server.use(
-    rest.get('/greeting', (req, res, ctx) => {
-      return res(ctx.status(500))
-    }),
-  )
+// test('handles server error', async () => {
+//   server.use(
+//     rest.get('/greeting', (req, res, ctx) => {
+//       return res(ctx.status(500))
+//     }),
+//   )
 
-  render(<Greeting url="/greeting" />)
+//   render(<Greeting url="/greeting" />)
 
-  fireEvent.click(screen.getByText('Load Greeting'))
+//   fireEvent.click(screen.getByText('Load Greeting'))
 
-  await waitFor(() => screen.getByRole('alert'))
+//   await waitFor(() => screen.getByRole('alert'))
 
-  expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
-  expect(screen.getByRole('button')).not.toBeDisabled()
-})
+//   expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
+//   expect(screen.getByRole('button')).not.toBeDisabled()
+// })

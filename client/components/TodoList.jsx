@@ -1,7 +1,9 @@
 import React from 'react';
 import TodoListItem from './TodoListItem.jsx';
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ todos }) => {
+  todos = todos.slice(0, 20);
+  return (
     <ul className="list-group">
         {todos.map(todo => (
             <TodoListItem
@@ -11,6 +13,7 @@ const TodoList = ({ todos }) => (
             />
         ))}
     </ul>
-);
+)
+        };
 
 export default TodoList
