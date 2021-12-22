@@ -5,7 +5,7 @@ import TodoList from './TodoList.jsx';
 const App = props => {
     const [ todos, setTodos] = useState([]);
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/todos')
+        axios.get('/todos')
             .then(({ data }) => {
                 setTodos(data)
             })

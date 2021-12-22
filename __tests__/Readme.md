@@ -4,6 +4,6 @@ Let's talk about testing. So we will go over a bunch of testing concepts. And I 
 
 ## Setup
 
-Lets go over the pieces of testing. You need a test runner. (Jest)
+Lets go over the pieces of testing. You need a test runner. (Jest or Cypress)
 
 
