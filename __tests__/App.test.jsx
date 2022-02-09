@@ -21,7 +21,12 @@ const server = setupServer(
     return res(ctx.json([{
       "userId": 1,
       "id": 1,
-      "title": "delectus aut autem",
+      "title": "todo one",
+      "completed": false
+    }, {
+      "userId": 2,
+      "id": 2,
+      "title": "todo two",
       "completed": false
     }]))
   }),
@@ -32,5 +37,18 @@ afterEach(() => server.resetHandlers())
 afterAll(()=> server.close())
 
 test('loads and displays todos', async ()=> {
+  //TODO test the todo list app!
+  //render the component
+  render(<App />)
+  // wait for the second render
+  waitFor(()=>screen.getByText('todo one'))
+
+  expect(screen.getByText('todo one')).toExist()
+  expect(screen.getByText('todo two')).toExist()
+  //test if the todos are on teh screen 
+
+})
+
+test('handles a click event', async ()=> {
   //TODO test the todo list app!
 })

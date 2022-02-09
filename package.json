@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "react": "webpack --watch",
+    "react2": "webpack --config ./webpack.greeting.config.js --watch",
     "react:prod": "webpack",
     "start": "nodemon server",
     "start:prod": "node server"

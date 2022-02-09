@@ -1,5 +1,5 @@
 import React from 'react'
-//libary to mock out a server
+//libraries to mock out a server
 import {rest} from 'msw'
 import {setupServer} from 'msw/node'
 // library to test react
@@ -33,19 +33,19 @@ test('loads and displays greeting', async () => {
   expect(screen.getByRole('button')).toBeDisabled()
 })
 
-// test('handles server error', async () => {
-//   server.use(
-//     rest.get('/greeting', (req, res, ctx) => {
-//       return res(ctx.status(500))
-//     }),
-//   )
+test('handles server error', async () => {
+  server.use(
+    rest.get('/greeting', (req, res, ctx) => {
+      return res(ctx.status(500))
+    }),
+  )
 
-//   render(<Greeting url="/greeting" />)
+  render(<Greeting url="/greeting" />)
 
-//   fireEvent.click(screen.getByText('Load Greeting'))
+  fireEvent.click(screen.getByText('Load Greeting'))
 
-//   await waitFor(() => screen.getByRole('alert'))
+  await waitFor(() => screen.getByRole('alert'))
 
-//   expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
-//   expect(screen.getByRole('button')).not.toBeDisabled()
-// })
+  expect(screen.getByRole('alert')).toHaveTextContent('Oops, failed to fetch!')
+  expect(screen.getByRole('button')).not.toBeDisabled()
+})

@@ -11,7 +11,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.static(PUBLIC))
-
+app.use(express.static(PUBLIC))
 app.get('/todos', (req, res) => {
   axios.get('https://jsonplaceholder.typicode.com/todos')
   .then(({ data }) => {
@@ -20,7 +20,7 @@ app.get('/todos', (req, res) => {
 })
 
 app.get('/hello', (req, res)=>{
-  res.send({greeting: 'hello world!!'});
+  res.send({greeting: 'hello world'});
 })
 
 
