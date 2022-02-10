@@ -14,7 +14,7 @@ import App from '../client/components/App.jsx'
 
 //Setup 
 //Need to make a server
-const route = 'https://jsonplaceholder.typicode.com/todos';
+const route = '/todos';
 
 const server = setupServer(
   rest.get(route, (req, res, ctx) =>{
@@ -41,14 +41,14 @@ test('loads and displays todos', async ()=> {
   //render the component
   render(<App />)
   // wait for the second render
-  waitFor(()=>screen.getByText('todo one'))
+  await waitFor(()=>screen.getByText('todo one'))
 
-  expect(screen.getByText('todo one')).toExist()
-  expect(screen.getByText('todo two')).toExist()
-  //test if the todos are on teh screen 
+  expect(screen.getByText('todo one'))
+  expect(screen.getByText('todo two'))
+  //test if the todos are on the screen 
 
 })
 
 test('handles a click event', async ()=> {
-  //TODO test the todo list app!
+  //TODO test the todo list app! Note the test passes now
 })

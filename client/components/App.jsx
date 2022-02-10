@@ -5,8 +5,10 @@ import TodoList from './TodoList.jsx';
 const App = props => {
     const [ todos, setTodos] = useState([]);
     useEffect(() => {
+      console.log('getting')
         axios.get('/todos')
             .then(({ data }) => {
+                console.log(data)
                 setTodos(data)
             })
     }, []);
