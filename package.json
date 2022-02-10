@@ -9,7 +9,8 @@
     "react2": "webpack --config ./webpack.greeting.config.js --watch",
     "react:prod": "webpack",
     "start": "nodemon server",
-    "start:prod": "node server"
+    "start:prod": "node server",
+    "end-to-end": "cypress run "
   },
   "keywords": [],
   "author": "",

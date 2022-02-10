@@ -6,3 +6,8 @@
 For the example intro use the greeting
 
 ## Also a working implementation of jest-enzyme. 
+
+
+## For cypress run
+`npx cypress install`
+`npm run end-to-end`
