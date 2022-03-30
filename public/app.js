@@ -326,17 +326,6 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 
 /***/ }),
 
-/***/ "./client/components/App.jsx":
-/*!***********************************!*\
-  !*** ./client/components/App.jsx ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ \"./node_modules/@babel/runtime/helpers/esm/slicedToArray.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _TodoList_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TodoList.jsx */ \"./client/components/TodoList.jsx\");\n\n\n\n\n\nvar App = function App(props) {\n  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),\n      _useState2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_useState, 2),\n      todos = _useState2[0],\n      setTodos = _useState2[1];\n\n  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {\n    axios__WEBPACK_IMPORTED_MODULE_2___default().get('/todos').then(function (_ref) {\n      var data = _ref.data;\n      setTodos(data);\n    });\n  }, []);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"container\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"h1\", null, \"Another TodoList!\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_TodoList_jsx__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n    todos: todos\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://testing-demo/./client/components/App.jsx?");
-
-/***/ }),
-
 /***/ "./client/components/Greeting.jsx":
 /*!****************************************!*\
   !*** ./client/components/Greeting.jsx ***!
@@ -348,39 +337,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./client/components/TodoList.jsx":
-/*!****************************************!*\
-  !*** ./client/components/TodoList.jsx ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _TodoListItem_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TodoListItem.jsx */ \"./client/components/TodoListItem.jsx\");\n\n\n\nvar TodoList = function TodoList(_ref) {\n  var todos = _ref.todos;\n  todos = todos.slice(0, 20);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"ul\", {\n    className: \"list-group\"\n  }, todos.map(function (todo) {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TodoListItem_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n      role: \"todo\",\n      todo: todo,\n      key: todo.id\n    });\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoList);\n\n//# sourceURL=webpack://testing-demo/./client/components/TodoList.jsx?");
-
-/***/ }),
-
-/***/ "./client/components/TodoListItem.jsx":
-/*!********************************************!*\
-  !*** ./client/components/TodoListItem.jsx ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _TodoListItemStatus_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TodoListItemStatus.jsx */ \"./client/components/TodoListItemStatus.jsx\");\n\n\n\nvar TodoListItem = function TodoListItem(_ref) {\n  var todo = _ref.todo;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"li\", {\n    className: \"list-group-item row\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", {\n    className: \"col align-self-start\"\n  }, todo.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TodoListItemStatus_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    id: todo.id,\n    status: todo.completed\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoListItem);\n\n//# sourceURL=webpack://testing-demo/./client/components/TodoListItem.jsx?");
-
-/***/ }),
-
-/***/ "./client/components/TodoListItemStatus.jsx":
-/*!**************************************************!*\
-  !*** ./client/components/TodoListItemStatus.jsx ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ \"./node_modules/@babel/runtime/helpers/esm/slicedToArray.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\n\nvar TodoListItemStatus = function TodoListItemStatus(_ref) {\n  var status = _ref.status,\n      id = _ref.id;\n\n  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(status),\n      _useState2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_useState, 2),\n      displayStatus = _useState2[0],\n      setStatus = _useState2[1];\n\n  var changeStatus = function changeStatus() {\n    setStatus(!displayStatus);\n  };\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"span\", {\n    onClick: changeStatus,\n    id: \"status\".concat(id),\n    className: \"col align-self-end\"\n  }, displayStatus === true ? String.fromCharCode(10003) : 'X');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoListItemStatus);\n\n//# sourceURL=webpack://testing-demo/./client/components/TodoListItemStatus.jsx?");
-
-/***/ }),
-
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -388,7 +344,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _components_App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App.jsx */ \"./client/components/App.jsx\");\n/* harmony import */ var _components_Greeting_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Greeting.jsx */ \"./client/components/Greeting.jsx\");\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_App_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById('app')); //ReactDOM.render(<Greeting url=\"/hello\"/>, document.getElementById('greeting'));\n\n//# sourceURL=webpack://testing-demo/./client/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _components_Greeting_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Greeting.jsx */ \"./client/components/Greeting.jsx\");\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Greeting_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n  url: \"/hello\"\n}), document.getElementById('greeting'));\n\n//# sourceURL=webpack://testing-demo/./client/index.js?");
 
 /***/ }),
 
