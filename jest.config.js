@@ -1,6 +1,6 @@
 /*
  * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
+ * https://jestjs.io/docs/en/configuration.html
  */
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: undefined,
+  coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -73,10 +73,10 @@ module.exports = {
   // An array of file extensions your modules use
   // moduleFileExtensions: [
   //   "js",
+  //   "json",
   //   "jsx",
   //   "ts",
   //   "tsx",
-  //   "json",
   //   "node"
   // ],
 
@@ -128,7 +128,7 @@ module.exports = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ["jest-enzyme"],
+  // setupFilesAfterEnv: [],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -137,15 +137,11 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
-  // testEnvironment: "enzyme",
-
+  // testEnvironment: "jest-environment-jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
-  testEnvironmentOptions: {
-    enzymeAdapter: "react16"
-  },
+
   // Adds a location field to test results
   // testLocationInResults: false,
 
@@ -167,7 +163,7 @@ module.exports = {
   // testResultsProcessor: undefined,
 
   // This option allows use of a custom test runner
-  // testRunner: "jest-circus/runner",
+  // testRunner: "jasmine2",
 
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
   // testURL: "http://localhost",

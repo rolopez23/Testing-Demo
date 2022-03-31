@@ -4,7 +4,7 @@ describe('Todo tests', () => {
   beforeEach(()=>{
     cy.intercept('get','/todos').as('getTodos');
     cy.visit('/');
-    cy.wait('@getTodos')
+    cy.wait('@getTodos');
   })
   //Simple test to make sure we are rendering,
   //Probably not necessary
@@ -24,9 +24,6 @@ describe('Todo tests', () => {
   })
 
   it('Allows a user to click an item', ()=> {
-    cy.intercept('get','/todos', todos).as('getTodos');
-    cy.visit('/');
-    cy.wait('@getTodos');
     cy.contains('X')
     cy.get('#status1').click()
     cy.contains(String.fromCharCode(10003))
